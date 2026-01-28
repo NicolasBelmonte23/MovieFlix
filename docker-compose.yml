@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14.20-trixie
+    container_name: movieflixcontainer
+    environment:
+      POSTGRES_USER: ${USERNAME}
+      POSTGRES_PASSWORD: ${PASSWORD}
+      POSTGRES_DB: ${DATABASE}   # banco já nasce pronto
+    ports:
+      - "5432:5432"
+    restart: always
